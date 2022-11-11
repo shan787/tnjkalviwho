@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-with,intial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <style>
+        nav{
+    position: sticky;
+    top:0;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw 8vw ;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.15);
+    font: 'Open Sans';
+}
+
+
+nav img{
+    width: 100px;
+    cursor: pointer;
+}
+nav p1{
+    font-size: 40px;
+    margin-left: 20px;
+}
+nav .navigation ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+nav .navigation ul li{
+    list-style: none;
+    margin-left: 50px;
+
+}
+nav .navigation ul li a{
+    text-decoration: none;
+    color:rgb(21,21,100);
+    font-size: 25px;
+    font-weight: 500;  
+    transition: 0.3s ease;     
+}
+nav .navigation ul li.active a,
+nav .navigation ul li a:hover{
+    color :whitesmoke;
+    background:teal;
+    border-radius: 10px;
+    transition: ease-in 1s;
+    transition: ease-out 1s;
+}
+
+section p{
+    color: blue;
+    font-size: 30px;
+    font-weight: 500;
+}
+#HOME{
+    background-image:  "C:\Users\DEEPIKA\Documents\web.jpeg";
+    width: 100%;
+    height: 100vh;
+    background-size: cover ;
+    background-position: center;
+    display :flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font: "Open Sans";
+} 
+#MATERIALS{
+    font: "";
+    margin-left: 20px;
+    padding-left: 15px;
+}
+#CONTACT{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   background: #fff38e;
+}
+#CONTACT::before
+{
+    content: '';
+    position: flex;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+   
+}
+.container
+{
+    position: relative;
+    min-width: 1100px;
+    min-height: 550px;
+    display: flex;
+    z-index: 1000;
+    background: #ffff;
+}
+.container .CONTACTINFO{
+    position: absolute;
+    top: 40px;
+    width: 300px;
+    height: 350px;
+    background: #095a55;
+    z-index: 1;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 20px 25px rgba(0,0,0,0.15);
+}
+
+.container .CONTACTINFO h2{
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+}
+.container .CONTACTINFO ul.info{
+    position: relative;
+    margin: 20px 0;
+}
+.container .CONTACTINFO ul.info li{
+    position: relative;
+    list-style: none;
+    display: flex;
+    margin: 20px 0;
+    cursor: pointer;
+    align-items: flex-start;
+}
+.container .CONTACTINFO ul.info li span:nth-child(1){
+width: 39px;
+min-width: 30px;
+}
+
+.container .CONTACTINFO ul.info li span:nth-child(1) img{
+    max-width: 100%;
+    filter: invert(1);
+}
+
+.container .CONTACTINFO ul.info li span:nth-child(2){
+    color: #fff;
+    margin-left: 10px;
+    font-weight: 300;
+}
+
+.container .CONTACTINFO ul.sci{
+    position: relative;
+    display: flex;
+}
+
+.container .CONTACTINFO ul.sci li{
+    list-style: none;
+    margin-right: 15px;
+}
+
+.container .CONTACTINFO ul.sci li a{
+    text-decoration: none;
+}
+
+.container .CONTACTINFO ul.sci li a img{
+    filter: invert(1);
+}
+.container .CONTACTFORM{
+    position: absolute;
+    padding: 70px 50px;
+    padding-left: 250px;
+    margin-left: 150px;
+    width:calc(100%-300px);
+    height: 80%;
+    background: #fff;
+    box-shadow: 0 50px 50px rgba(0,0,0,0.25);
+}
+.container .CONTACTFORM h2{
+    color: #0f3959;
+    font-size: 24px;
+    font-weight: 500;
+}
+.container .CONTACTFORM .formBox{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.container .CONTACTFORM .formBox .inputBox{
+    position: relative;
+    margin-bottom: 35px;
+}
+.container .CONTACTFORM .formBox .inputBox.w50{
+    width: 47%;
+}
+.container .CONTACTFORM .formBox .inputBox.w100{
+    width: 100%;
+}
+.container .CONTACTFORM .formBox .inputBox input,
+.container .CONTACTFORM .formBox .inputBox textarea{
+    width: 100%;
+    resize: none;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: #333;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #777;
+}
+.container .CONTACTFORM .formBox .inputBox textarea{
+    height: 120px;
+}
+.container .CONTACTFORM .formBox .inputBox span{
+    position: relative;
+    left: 0;
+    padding: 5px 0;
+    pointer-events: none;
+    font-size: 18px;
+    font-weight: 300;
+    transition: 0.3s;
+}
+.container .CONTACTFORM .formBox .inputBox input:focus ~ span,
+.container .CONTACTFORM .formBox .inputBox input:valid ~ span,
+.container .CONTACTFORM .formBox .inputBox textarea:focus~span,
+.container .CONTACTFORM .formBox .inputBox textarea:valid ~ span{
+    transform: translateY(-20px);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #095a55;
+    font-weight: 500;
+}
+.container .CONTACTFORM .formBox .inputBox input[type="submit"]{
+    position: relative;
+    cursor: pointer;
+    background: #095a55;
+    color:#fff;
+    border: none;
+    max-width: 150px;
+    padding: 12px;
+}
+
+.container .CONTACTFORM .formBox .inputBox input[type="submit"]:hover{
+    background: #0d948b;
+}
+@media(max-width : 1200px){
+    .container{
+        width: 90%;
+        min-width: auto;
+        margin: 20px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    }
+ .container   .CONTACTINFO{
+        top: 0;
+    height: 500px;
+    position: relative;
+    box-shadow: none;
+    }
+    .container .CONTACTFORM{
+        position: relative;
+        width: calc(100%-350px);
+        padding-left: 0;
+        margin: 0;
+        padding: 40px;
+        height: 550px;
+        box-shadow: none;
+    }
+}
+@media (max-width : 768px){
+    #CONTACT{
+        background: #fff38e;
+    }
+    #CONTACT::before{
+        display: none;
+    }
+    .container .CONTACTINFO{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .container .CONTACTFORM{
+        width: 100%;
+        height: auto;
+    }
+    .container .CONTACTINFO{
+        width:40%;
+        height: auto;
+        flex-direction: column;
+    }
+    .container .CONTACTINFO ul .sci{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media (max-width : 990px){
+    #CONTACT{
+        background: #fff38e;
+    }
+    #CONTACT::before{
+        display: none;
+    }
+    .container .CONTACTINFO{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .container .CONTACTFORM{
+        width: 100%;
+        height: auto;
+    }
+    .container .CONTACTINFO{
+        width:40%;
+        height: auto;
+        flex-direction: column;
+    }
+    .container .CONTACTINFO ul .sci{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }}
+footer{
+    position: flex;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+    height: auto;
+    width:100vw;
+    font-family: "Open Sans";
+    padding-top: 40px;
+    color:#fff;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.footer-content p{
+    max-width: 250px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+div #pp a{
+    color: yellow;
+}
+div #pp a:hover{
+    color: teal;
+}
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem o;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+
+}
+.socials a i{
+    font-size: 40px;
+    transition: color .4s ease;
+}
+.socials a:hover i{
+    color: aqua;
+}
+.footer-bottom{
+    background: #000;
+    width: 100vw;
+    padding:20px 0;
+    text-align: center;
+}
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+nav .menu-btn i{
+    color: black;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+    
+}
+#click{
+    display: none;
+}
+
+@media screen and (max-width:768px) {
+    nav .navigation .menu-btn i{
+        display: block;
+    }
+    #click:checked ~ .menu-btn i:before{
+        content: "\f00d";
+    }
+    nav .navigation ul{
+        position: fixed;
+        top: 80px;
+        left: 100%;
+        background: white;
+        height: 100vh;
+        width: 100%;
+        display: block;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    
+#click:checked ~ ul{
+    left: 0%;
+    }
+  
+    
+    nav .navigation ul li{
+        margin: 40px 0;
+    }
+    nav .navigation ul li a{
+        font-size: 20px;
+        display: block;
+    }
+    nav .navigation ul li a:hover,
+nav .navigation ul li a:active{
+    color :cyan;
+    background: black;
+    }
+}
+
+@media screen and (max-width:990px) {
+    nav .navigation .menu-btn i{
+        display: block;
+    }
+    #click:checked ~ .menu-btn i:before{
+        content: "\f00d";
+    }
+    nav .navigation ul{
+        position: fixed;
+        top: 80px;
+        left: 100%;
+        background: white;
+        height: 100vh;
+        width: 100%;
+        display: block;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    
+#click:checked ~ ul{
+    left: 0%;
+    }
+  
+    
+    nav .navigation ul li{
+        margin: 40px 0;
+    }
+    nav .navigation ul li a{
+        font-size: 20px;
+        display: block;
+    }
+    nav .navigation ul li a:hover,
+nav .navigation ul li a:active{
+    color :cyan;
+    background: black;
+    }
+}
+
+    </style>
+    <title>KALVI KALANCHIYUM</title>
+    <script src="https://kit.fontawesome.com/3c00dafd2e.js" crossorigin="anonymous"></script>
+
+</head>
+    
+</head>
+<body>
+<nav>
+    <img src="C:\Users\DEEPIKA\Downloads\kk.jpeg" alt="">
+    <div class="title"><p1> KALVI KALANCHIYUM</p1></div>
+    <div class="navigation">
+        <input type="checkbox" id="click">
+        <label for="click"class="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+        <ul>
+            
+            <li class="active"><a href="#HOME">HOME</a></li>
+            <li><a href ="#MATERIALS">MATERIALS</a></li>
+            <li><a href="#CONTACT">CONTACT</a></li>
+        </ul>
+    </div>
+</nav>
+<!--HOME-->
+<section id="HOME">
+    
+    <h1></h1><br>
+    <h2>Enhance Your Future With TechEducation </h2>
+    <p>Today work hard for better future 
+        All materials are here available for 6th to neet,tnpsc,etc... any materials needed send your mail to kba15112006@gmail.com
+        . All rights acquired by KALVI KALANCHIYUM </p>
+<hr class="h">
+    
+</section>
+<!--materials-->
+<section id="MATERIALS">
+    <h2>All materials are here .
+        Materials available for 6th to neet,tnpsc,etc..
+    </h2>
+    <div class="6th">
+        <h3> <a href="H:\Notepad++\botony.html"> 11th-botony-question paper</a> </h3>
+        <h3> <a href="C:\Users\DEEPIKA\Documents\2.html"> 1-11th-commerce-question-paper-for-quarterly-exam-2019-english-medium</a> </h3>
+        <h3> <a href="C:\Users\DEEPIKA\Documents\3.html"> 1-11th-economics-question-paper-for-quarterly-exam-2019-tamil-medium</a> </h3>
+        <h3> <a href="C:\Users\DEEPIKA\Documents\4.html">1-11th-computer-science-question-paper-for-quarterly-exam-2019-tamil-medium </a> </h3>
+        <h3> <a href="C:\Users\DEEPIKA\Documents\5.html"> namma_kalvi_11th_tamil_kavimani_full_guide_218850-watermarked</a> </h3>
+        <h3> <a href="C:\Users\DEEPIKA\Documents\6.html"> 1-11th-business-maths-question-paper-for-quarterly-exam-2019-question-paper-english-medium</a> </h3>
+        <h3> <a href="C:\Users\DEEPIKA\Documents\7.html"> Concept of Physics HC Verma Vol 1[Medicalstudyzone.com]</a> </h3>
+        <h3> <a href="C:\Users\DEEPIKA\Documents\8.html"> Chemistry - pre quaterly preparatory home test</a> </h3>
+        <h3> <a href="C:\Users\DEEPIKA\Documents\9.html"> 'கணித சூத்திரங்கள்</a> </h3>
+        <h3> <a href="C:\Users\DEEPIKA\Documents\10.html"> 11th-botony-question paper</a> </h3>
+    </div>
+    <hr class="h">
+</section>
+<!--contact us-->
+<section id="CONTACT">
+
+    <div class="container">
+      <div class="CONTACTINFO"> 
+        <div>
+            <h2> CONTACT INFO</h2>
+            <ul class="info">
+             <li>
+                <span><img src="C:\Users\DEEPIKA\Downloads\mail.png"></span>
+                <span>kba15112006@gmail.com</span>
+             </li>
+             <li><span><img src="C:\Users\DEEPIKA\Downloads\call.png"></span>
+                <span>9994568970</span></li>
+            </ul>
+        </div>
+        <ul class="sci">
+            <li><a href="https://www.facebook.com/112326994869403/posts/122150087220427/?substory_index=0&flite=scwspnss"><img src="C:\Users\DEEPIKA\Downloads\1.png"></a></li>
+            <li><a href="https://twitter.com/ArunKbtweets?t=Coj04RCrE65mxWdTMvlAGg&s=08"><img src="C:\Users\DEEPIKA\Downloads\2.png"></a></li>
+            <li><a href="https://instagram.com/arunkb.exe?igshid=NGI3YWI1Y2U="><img src="C:\Users\DEEPIKA\Downloads\3.png"></a></li>
+        </ul>
+          </div>
+      <div class="CONTACTFORM">
+        <h2>Send a Message</h2>
+        <div class="formBox">
+            <div class="inputBox w50">
+                <input type="text" required>
+                <span>First Name</span>
+            </div>
+            <div class="inputBox w50">
+                <input type="text" required>
+                <span>Last Name</span>
+            </div>
+            <div class="inputBox w50">
+                <input type="email" required>
+                <span>Email</span>
+            </div>
+            <div class="inputBox w100">
+                <textarea required></textarea>
+                <span>write your message here...</span>
+            </div>
+            <div class="inputBox w100">
+                <input type="submit" value="Send">
+            </div>
+        </div>
+      </div>
+</section>
+<footer>
+    <div class="footer-content">
+            <h3>About us</h3>
+                <p></p>
+                <ul class="socials">
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </ul>
+                </div>
+                <div class="footer-bottom">
+                    <p>copyright &copy;2022 LOGTN. designed by <span>SHACHIN</span></p><div id="pp"><a href="privacy and policy.html">Privacy Policy</a></div>
+
+                </div>
+    </div>          
+</footer>
+<script type="text/javascript">
+    let section = document.querySelectorAll("section");
+    let navlinks = document.querySelectorAll("header nav a");
+
+window.onscroll = () =>{
+    section.forEach(sec =>{
+        let top= window.scrollY;
+        let offset = sec.offsetTop - 150;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute("id");
+
+        if(top >= offset && top < offset + height){
+            navlinks.forEach(limks =>{
+                links.classlist.add("active");
+                document.querySelector("header nav a[href*=' + id +']").classList.remove("active");
+
+            });
+
+        };
+
+    });
+    $(document).on('click','ul,li',function(){
+        $(this).addclass('active').sibilings.removeclass('active')
+    })
+};
+</script>
+</body>
+</html>
